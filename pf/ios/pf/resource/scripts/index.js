@@ -475,4 +475,4 @@ window['updateByZip'] = function (url, onEvent, onEnd) {
         }
     }, 10, 100000000);
 };
-loadUrl(conch.presetUrl||"http://mbqb.ihaiu.com/GamePF/replease_optimization___/index.html");
+loadUrl(conch.presetUrl||"https://cdn-exp-pf.shinezone.com/resources/res/ts1/index.html");
