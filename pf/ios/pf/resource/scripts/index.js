@@ -475,4 +475,7 @@ window['updateByZip'] = function (url, onEvent, onEnd) {
         }
     }, 10, 100000000);
 };
-loadUrl(conch.presetUrl||"https://cdn-exp-pf.shinezone.com/resources/res/ts1/index.html");
+
+loadUrl(conch.presetUrl||"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html");
+
+//loadUrl(conch.presetUrl||"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html");

@@ -82,6 +82,13 @@ var loadingView = (function () {
     return loadingView;
 }());
 
+window.appSetting = {
+url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
+appId: "com.shinezone.movie"
+};
+
+console.log("window.appSetting.appId=" + window.appSetting.appId);
+
 window.loadingView = new loadingView();
 if(window.loadingView)
 {

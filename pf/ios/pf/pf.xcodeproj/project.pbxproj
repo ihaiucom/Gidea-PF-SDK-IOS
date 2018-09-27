@@ -67,6 +67,7 @@
 /* Begin PBXFileReference section */
 		0927432121549F6500037AD5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		0977394521549E2500805AC6 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
+		098329EC215B6A0500FBD071 /* pf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pf.entitlements; sourceTree = "<group>"; };
 		09BCE834215A2D3000FECAF4 /* OcNativeClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcNativeClass.h; sourceTree = "<group>"; };
 		09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OcNativeClass.mm; sourceTree = "<group>"; };
 		24B1796D20E4F17100AF57C9 /* JSBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JSBridge.mm; sourceTree = "<group>"; };
@@ -87,7 +88,7 @@
 		A2460A1C1C8DAF710032CD8D /* pf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2460A201C8DAF710032CD8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2460A221C8DAF710032CD8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A2460A231C8DAF710032CD8D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; wrapsLines = 1; };
+		A2460A231C8DAF710032CD8D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; wrapsLines = 0; };
 		A2460A251C8DAF710032CD8D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A2460A261C8DAF710032CD8D /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		A2460A291C8DAF710032CD8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 		A2460A1E1C8DAF710032CD8D /* pf */ = {
 			isa = PBXGroup;
 			children = (
+				098329EC215B6A0500FBD071 /* pf.entitlements */,
 				0977394521549E2500805AC6 /* AppsFlyerLib.framework */,
 				24B1796E20E4F17100AF57C9 /* JSBridge.h */,
 				24B1796D20E4F17100AF57C9 /* JSBridge.mm */,
@@ -370,6 +372,11 @@
 					A2460A1B1C8DAF710032CD8D = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = L666WCH9UC;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					A2460A341C8DAF710032CD8D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -590,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pf/pf.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L666WCH9UC;
@@ -615,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pf/pf.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L666WCH9UC;
