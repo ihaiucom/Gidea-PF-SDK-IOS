@@ -11,6 +11,7 @@
 		0977394621549E2500805AC6 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0977394521549E2500805AC6 /* AppsFlyerLib.framework */; };
 		09BCE835215A2D3000FECAF4 /* OcNativeClass.h in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE834215A2D3000FECAF4 /* OcNativeClass.h */; };
 		09BCE837215A2D6F00FECAF4 /* OcNativeClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */; };
+		09FAA078215C6F05001ADD9B /* GameApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09FAA077215C6F05001ADD9B /* GameApplication.mm */; };
 		24B1796F20E4F17100AF57C9 /* JSBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 24B1796D20E4F17100AF57C9 /* JSBridge.mm */; };
 		24B8AD7B20EC6D37004EDAEF /* LaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B8AD7A20EC6D37004EDAEF /* LaunchView.m */; };
 		5E63101A1D8FDA1900FBDC6D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2460A9B1C8DB4A80032CD8D /* AudioToolbox.framework */; };
@@ -70,6 +71,8 @@
 		098329EC215B6A0500FBD071 /* pf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pf.entitlements; sourceTree = "<group>"; };
 		09BCE834215A2D3000FECAF4 /* OcNativeClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcNativeClass.h; sourceTree = "<group>"; };
 		09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OcNativeClass.mm; sourceTree = "<group>"; };
+		09FAA076215C6F05001ADD9B /* GameApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameApplication.h; sourceTree = "<group>"; };
+		09FAA077215C6F05001ADD9B /* GameApplication.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameApplication.mm; sourceTree = "<group>"; };
 		24B1796D20E4F17100AF57C9 /* JSBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JSBridge.mm; sourceTree = "<group>"; };
 		24B1796E20E4F17100AF57C9 /* JSBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridge.h; sourceTree = "<group>"; };
 		24B8AD7920EC6D37004EDAEF /* LaunchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				24B8AD7A20EC6D37004EDAEF /* LaunchView.m */,
 				09BCE834215A2D3000FECAF4 /* OcNativeClass.h */,
 				09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */,
+				09FAA076215C6F05001ADD9B /* GameApplication.h */,
+				09FAA077215C6F05001ADD9B /* GameApplication.mm */,
 			);
 			path = pf;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				5EAE9BE01D6FFF6E00BDC3F5 /* IAPManager.m in Sources */,
 				A2460A241C8DAF710032CD8D /* AppDelegate.mm in Sources */,
 				24B1796F20E4F17100AF57C9 /* JSBridge.mm in Sources */,
+				09FAA078215C6F05001ADD9B /* GameApplication.mm in Sources */,
 				A2460A211C8DAF710032CD8D /* main.m in Sources */,
 				09BCE837215A2D6F00FECAF4 /* OcNativeClass.mm in Sources */,
 				A2460A5C1C8DB0E10032CD8D /* MarketAppStore.mm in Sources */,
@@ -615,6 +621,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shinezone.movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -641,6 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shinezone.movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
