@@ -62,15 +62,31 @@ function initFreeType() {
                     if (!fs_exists(sTempFontPath)) {
                         fs_mkdir(sTempFontPath);
                     }
-                    sTempFontPath += "layabox.ttf";
+                    
+  
+                    var lang = window.localStorage.getItem("_lang");
+                    if(!lang)
+                    {
+                        lang = "en";
+                    }
+
+                    window.localStorage.setItem("fontSetting", lang);
+
+                    sTempFontPath += ( lang == "zh_cn" ? "fzctht.ttf" : "fzzyjt.ttf");
                     bRet = conch.initFreeTypeDefaultFontFromFile(sTempFontPath);
                     if (bRet == false) {
-                        assetFontData = conch.readFileFromAsset('font/layabox.ttf', 'raw');
+                        assetFontData = conch.readFileFromAsset( lang == "zh_cn" ? "font/fzctht.ttf" : "font/fzzyjt.ttf", 'raw');
                         if (assetFontData) {
                             fs_writeFileSync(sTempFontPath, assetFontData);
                             bRet = conch.initFreeTypeDefaultFontFromFile(sTempFontPath);
                         }
                     }
+
+                    // alert("lang=" + lang);
+                    // alert("fontSetting=" + (lang == "zh_cn" ? "fzctht.ttf" : "fzzyjt.ttf"));
+
+
+
                     if (!bRet) {
                         if (sOS == "Conch-window") {
                             bRet = conch.initFreeTypeDefaultFontFromFile("C:/Windows/Fonts/simhei.ttf");
@@ -476,6 +492,15 @@ window['updateByZip'] = function (url, onEvent, onEnd) {
     }, 10, 100000000);
 };
 
-loadUrl(conch.presetUrl||"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html");
+//loadUrl(conch.presetUrl||"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html");
 
-//loadUrl(conch.presetUrl||"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html");
+// loadUrl(conch.presetUrl||"http://stand.alone.version/index.html");
+
+window.appSetting = {
+//    url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
+    url:"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html",
+    appId: "com.shinezone.movie"
+};
+
+loadUrl(conch.presetUrl||window.appSetting.url);
+

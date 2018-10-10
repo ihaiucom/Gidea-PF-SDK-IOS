@@ -197,6 +197,31 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
                  self.isProcessing = NO;
                  NSLog(@"[IAP] invalid product!\n");
                  [self.delegate onFailed:sProductID quantity:nNum orderID:sOrderID];
+                 // 临时测试URL发送
+//                 NSString* _backurl = @"http://172.16.52.101:3000/pay/Apple";
+//                 NSString* _order_id = @"order_id";
+//                 NSString* _gameid = @"gameid";
+//                 NSMutableString *sendParam = [[NSMutableString alloc] init];
+//                 [sendParam appendFormat:@"plateform=%@",self.strPlateform];
+//                 [sendParam appendFormat:@"&order-id=%@",_order_id];
+//                 [sendParam appendFormat:@"&game-id=%@",_gameid];
+//                 [sendParam appendFormat:@"&production-id=%@",nil];
+//                 [sendParam appendFormat:@"&transaction-id=%@",nil];
+//                 [sendParam appendFormat:@"&receipt-data=%@",nil];
+//                 NSData* data = [sendParam dataUsingEncoding:NSUTF8StringEncoding];
+//                 NSLog(@"[IAP] pruchase backurl =  %@",_backurl);
+//                 NSLog(@"[IAP] pruchase param =  %@",sendParam);
+//
+//                 [self checkReceipt:_backurl withData:data onCompletion:^(NSString* response,NSError* error){
+//                     if (error == nil){
+//
+//                         NSLog(@"[IAP]error == nil web result =  %@",response);
+//                     }
+//                     else{
+//                         self.isProcessing = NO;
+//                         NSLog(@"[IAP]error !== nil web result =  %@",response);
+//                     }
+//                 }];
              }
              // 错误的产品 ID 回馈
              NSMutableString *resOutput = [[NSMutableString alloc] init];
@@ -212,6 +237,7 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
         self.isProcessing = NO;
         NSLog(@"[IAP] buyProps:parser json error");
         [self.delegate onFailed:@"nill" quantity:0 orderID:@"nill"];
+        
     }
 }
 

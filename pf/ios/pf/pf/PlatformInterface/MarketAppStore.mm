@@ -142,7 +142,11 @@
 {
 	NSLog(@"this is MarketAppStore method openTopicCircle");
 }
-
+-(void)LP_Recharge:(NSString*) jsonParam
+{
+    // TODO 添加内购相关代码.
+    NSLog(@"this is MarketAppStore method Recharge for IOS内购");
+}
 -(void)LP_onResp:(id)resp;
 {
 }

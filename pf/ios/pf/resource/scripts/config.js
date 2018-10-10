@@ -82,10 +82,7 @@ var loadingView = (function () {
     return loadingView;
 }());
 
-window.appSetting = {
-    url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
-    appId: "com.shinezone.movie"
-};
+
 
 var GameApplication = (function(){
 
@@ -161,6 +158,7 @@ var GameApplication = (function(){
                     console.log("gameApplication.BundleIdentifier = " + uid);
                     __this.BundleIdentifier = uid;
                     window.appSetting.appId = uid;
+                    console.log("getBundleIdentifier window.appSetting.appId=" + window.appSetting.appId);
                 },
                 "getBundleIdentifier");
         }

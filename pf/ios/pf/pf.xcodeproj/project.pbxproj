@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0927432221549F6500037AD5 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0927432121549F6500037AD5 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		092C93B7216DDEDE004E3AE5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2460A971C8DB4870032CD8D /* StoreKit.framework */; };
 		0977394621549E2500805AC6 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0977394521549E2500805AC6 /* AppsFlyerLib.framework */; };
 		09BCE835215A2D3000FECAF4 /* OcNativeClass.h in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE834215A2D3000FECAF4 /* OcNativeClass.h */; };
 		09BCE837215A2D6F00FECAF4 /* OcNativeClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */; };
@@ -148,6 +149,7 @@
 				A2460AA61C8DB4DA0032CD8D /* GLKit.framework in Frameworks */,
 				A2460AA21C8DB4C80032CD8D /* OpenGLES.framework in Frameworks */,
 				A2460AA01C8DB4BE0032CD8D /* OpenAL.framework in Frameworks */,
+				092C93B7216DDEDE004E3AE5 /* StoreKit.framework in Frameworks */,
 				A2460A901C8DB4520032CD8D /* SystemConfiguration.framework in Frameworks */,
 				A2460A8E1C8DB4440032CD8D /* CoreGraphics.framework in Frameworks */,
 			);
@@ -378,6 +380,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = L666WCH9UC;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
