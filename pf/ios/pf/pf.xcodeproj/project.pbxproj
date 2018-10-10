@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0927432221549F6500037AD5 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0927432121549F6500037AD5 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		092C93B7216DDEDE004E3AE5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2460A971C8DB4870032CD8D /* StoreKit.framework */; };
+		092C93BB216DE54F004E3AE5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092C93BA216DE54F004E3AE5 /* StoreKit.framework */; };
 		0977394621549E2500805AC6 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0977394521549E2500805AC6 /* AppsFlyerLib.framework */; };
 		09BCE835215A2D3000FECAF4 /* OcNativeClass.h in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE834215A2D3000FECAF4 /* OcNativeClass.h */; };
 		09BCE837215A2D6F00FECAF4 /* OcNativeClass.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */; };
@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		0927432121549F6500037AD5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		092C93BA216DE54F004E3AE5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0977394521549E2500805AC6 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
 		098329EC215B6A0500FBD071 /* pf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pf.entitlements; sourceTree = "<group>"; };
 		09BCE834215A2D3000FECAF4 /* OcNativeClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcNativeClass.h; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		A2460A911C8DB4620032CD8D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A2460A931C8DB4700032CD8D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A2460A951C8DB47C0032CD8D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		A2460A971C8DB4870032CD8D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A2460A991C8DB4930032CD8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2460A9B1C8DB4A80032CD8D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A2460A9D1C8DB4B50032CD8D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -149,7 +149,7 @@
 				A2460AA61C8DB4DA0032CD8D /* GLKit.framework in Frameworks */,
 				A2460AA21C8DB4C80032CD8D /* OpenGLES.framework in Frameworks */,
 				A2460AA01C8DB4BE0032CD8D /* OpenAL.framework in Frameworks */,
-				092C93B7216DDEDE004E3AE5 /* StoreKit.framework in Frameworks */,
+				092C93BB216DE54F004E3AE5 /* StoreKit.framework in Frameworks */,
 				A2460A901C8DB4520032CD8D /* SystemConfiguration.framework in Frameworks */,
 				A2460A8E1C8DB4440032CD8D /* CoreGraphics.framework in Frameworks */,
 			);
@@ -175,6 +175,7 @@
 		5E6CC3B91EA4F60200FA49A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				092C93BA216DE54F004E3AE5 /* StoreKit.framework */,
 				0927432121549F6500037AD5 /* iAd.framework */,
 				5E6CC3BA1EA4F60500FA49A3 /* libbz2.1.0.tbd */,
 			);
@@ -202,7 +203,6 @@
 				A2460A9D1C8DB4B50032CD8D /* JavaScriptCore.framework */,
 				A2460A9B1C8DB4A80032CD8D /* AudioToolbox.framework */,
 				A2460A991C8DB4930032CD8D /* AVFoundation.framework */,
-				A2460A971C8DB4870032CD8D /* StoreKit.framework */,
 				A2460A951C8DB47C0032CD8D /* AdSupport.framework */,
 				A2460A931C8DB4700032CD8D /* Security.framework */,
 				A2460A911C8DB4620032CD8D /* libiconv.tbd */,
