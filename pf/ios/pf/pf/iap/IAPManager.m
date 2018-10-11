@@ -90,12 +90,18 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
+                NSLog(@"交易完成");
                 [self completeTransaction:transaction];
                 break;
+            case SKPaymentTransactionStatePurchasing:
+                NSLog(@"商品添加进列表");
+                break;
             case SKPaymentTransactionStateFailed:
+                NSLog(@"交易失败");
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
+                NSLog(@"已经购买过商品");
                 [self restoreTransaction:transaction];
             default:
                 break;

@@ -31,7 +31,8 @@
 
 
 - (void) openURL: (NSString *) url;
-
+- (void) exitAppp;
+- (void) checkNetwork;
 
 
 

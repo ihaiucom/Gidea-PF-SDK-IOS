@@ -7,6 +7,8 @@ var loadingView = (function () {
         else if (this.sOS == "Conch-android") {
             this.bridge = PlatformClass.createClass("demo.JSBridge");
         }
+
+        this.networkEnable = true;
     }
     Object.defineProperty(loadingView.prototype, "loadingAutoClose", {
         get: function () {
@@ -112,6 +114,7 @@ var GameApplication = (function(){
             this.getIDFA();
             this.getIDFV();
             this.getBundleIdentifier();
+            this.checkNetwork();
         }
     };
 
@@ -166,6 +169,15 @@ var GameApplication = (function(){
 
 
 
+    GameApplication.prototype.exitApp = function () 
+    {
+        if (this.bridge) 
+        {
+            this.bridge.call("exitApp");
+        }
+    };
+
+
     GameApplication.prototype.openURL = function (url) 
     {
         if (this.bridge) 
@@ -173,6 +185,24 @@ var GameApplication = (function(){
             this.bridge.call("openURL:", url);
         }
     };
+
+
+
+    GameApplication.prototype.checkNetwork = function (url) 
+    {
+        var __this = this;
+        if (this.bridge) 
+        {
+            this.bridge.callWithBack(
+                function(state)
+                {
+                    __this.networkEnable = state == "1";
+                },
+                "checkNetwork");
+        }
+    };
+                       
+                       
                        
                        
 

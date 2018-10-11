@@ -10,6 +10,13 @@
 #import <Foundation/NSString.h>
 #import "GameApplication.h"
 
+#import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonHMAC.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <netdb.h>
+#import <arpa/inet.h>
+
+
 @implementation GameApplication
 
 static GameApplication* _instance = nil;
@@ -159,6 +166,11 @@ static GameApplication* _instance = nil;
     [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"getBundleIdentifier" ret:identifier];
 }
 
+// 退出
+-(void) exitApp
+{
+    exit(0);
+}
 
 
 // 打开网页
@@ -167,5 +179,53 @@ static GameApplication* _instance = nil;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 
 }
+
+
+// 检测网络
+- (void) checkNetwork
+{
+    NSString *state = @"1";
+    
+    if(![self connectedToNetwork])
+    {
+//        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"网络连接失败,请查看网络是否连接正常！" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
+        
+        state = @"0";
+    }
+    
+    
+    [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"checkNetwork" ret:state];
+    
+}
+
+
+-(BOOL) connectedToNetwork
+{
+    // Create zero addy
+    struct sockaddr_in zeroAddress;
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    zeroAddress.sin_len = sizeof(zeroAddress);
+    zeroAddress.sin_family = AF_INET;
+    
+    // Recover reachability flags
+    SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+    SCNetworkReachabilityFlags flags;
+    
+    BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+    CFRelease(defaultRouteReachability);
+    
+    if (!didRetrieveFlags)
+    {
+        printf("Error. Could not recover network reachability flags\n");
+        return NO;
+    }
+    
+    BOOL isReachable = ((flags & kSCNetworkFlagsReachable) != 0);
+    BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
+    return (isReachable && !needsConnection) ? YES : NO;
+}
+
+
 
 @end
