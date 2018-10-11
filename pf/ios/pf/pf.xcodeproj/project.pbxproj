@@ -70,7 +70,6 @@
 		0927432121549F6500037AD5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		092C93BA216DE54F004E3AE5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0977394521549E2500805AC6 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
-		098329EC215B6A0500FBD071 /* pf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pf.entitlements; sourceTree = "<group>"; };
 		09BCE834215A2D3000FECAF4 /* OcNativeClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcNativeClass.h; sourceTree = "<group>"; };
 		09BCE836215A2D6F00FECAF4 /* OcNativeClass.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OcNativeClass.mm; sourceTree = "<group>"; };
 		09FAA076215C6F05001ADD9B /* GameApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameApplication.h; sourceTree = "<group>"; };
@@ -236,7 +235,6 @@
 		A2460A1E1C8DAF710032CD8D /* pf */ = {
 			isa = PBXGroup;
 			children = (
-				098329EC215B6A0500FBD071 /* pf.entitlements */,
 				0977394521549E2500805AC6 /* AppsFlyerLib.framework */,
 				24B1796E20E4F17100AF57C9 /* JSBridge.h */,
 				24B1796D20E4F17100AF57C9 /* JSBridge.mm */,
@@ -384,7 +382,7 @@
 								enabled = 1;
 							};
 							com.apple.SafariKeychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -608,7 +606,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pf/pf.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L666WCH9UC;
@@ -635,7 +632,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pf/pf.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L666WCH9UC;
