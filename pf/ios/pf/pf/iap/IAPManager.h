@@ -9,6 +9,8 @@
 
 @interface IAPManager : NSObject<SKProductsRequestDelegate,SKPaymentTransactionObserver>
 + (IAPManager*) getInstance;
+
+@property (nonatomic) NSData* paymentRequestData;
 -(void)recharge:(NSString*) jsonParam;
 - (id)initWithGameID:(NSString*)gameID andDelegate:(id<JCIapProcessCtrlDelegate>)delegate;
 @end

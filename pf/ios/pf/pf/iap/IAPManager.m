@@ -194,8 +194,9 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
                  [dict setObject:self.gameAppID forKey:@"gameid"];
                  NSData* pData = [NSKeyedArchiver archivedDataWithRootObject:dict];
                  
-                 payment.requestData = pData;
+//                 payment.requestData = pData;
                  payment.quantity = nNum;
+                 self.paymentRequestData = pData;
 
                  [[SKPaymentQueue defaultQueue] addPayment:payment];
              }
@@ -253,8 +254,12 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
     if (transaction == nil)
         return;
     
+    if(self.paymentRequestData == NULL)
+    {
+        self.paymentRequestData = transaction.payment.requestData;
+    }
     
-    if(NULL==transaction.payment.requestData)
+    if(NULL==self.paymentRequestData)
     {
         self.isProcessing = NO;
         NSLog(@"[IAP] transDoVerifyTransaction  requestData is null");
@@ -262,7 +267,8 @@ typedef void (^IAPcheckReceiptCompleteResponseBlock)(NSString* response,NSError*
         [self.delegate onFailed:@"nill" quantity:0 orderID:@"nill"];
         return;
     }
-    NSMutableDictionary *paymentmulti =(NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:transaction.payment.requestData];//
+    
+    NSMutableDictionary *paymentmulti =(NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:self.paymentRequestData];//
     NSString* _order_id = [paymentmulti objectForKey:@"order_id"];
     NSString* _backurl = [paymentmulti objectForKey:@"backurl"];
     NSString* _gameid = [paymentmulti objectForKey:@"gameid"];

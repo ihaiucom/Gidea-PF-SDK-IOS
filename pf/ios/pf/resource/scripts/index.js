@@ -64,11 +64,12 @@ function initFreeType() {
                     }
                     
   
-                    var lang = window.localStorage.getItem("_lang");
-                    if(!lang)
-                    {
-                        lang = "en";
-                    }
+                    // var lang = window.localStorage.getItem("_lang");
+                    // if(!lang)
+                    // {
+                    //     lang = "en";
+                    // }
+                    var lang = "en";
 
                     window.localStorage.setItem("fontSetting", lang);
 
@@ -82,8 +83,8 @@ function initFreeType() {
                         }
                     }
 
-                    // alert("lang=" + lang);
-                    // alert("fontSetting=" + (lang == "zh_cn" ? "fzctht.ttf" : "fzzyjt.ttf"));
+                    console.log("lang=" + lang);
+                    console.log("fontSetting=" + (lang == "zh_cn" ? "fzctht.ttf" : "fzzyjt.ttf"));
 
 
 
@@ -497,9 +498,10 @@ window['updateByZip'] = function (url, onEvent, onEnd) {
 // loadUrl(conch.presetUrl||"http://stand.alone.version/index.html");
 
 window.appSetting = {
-//    url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
-    url:"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html",
-    appId: "com.shinezone.movie"
+    url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
+    //url:"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html",
+    appId: "com.shinezone.movie",
+    enableVersion: true
 };
 
 loadUrl(conch.presetUrl||window.appSetting.url);
