@@ -501,7 +501,7 @@ window.appSetting = {
     url:"https://cdn-mv-release.shinezone.com/resources/ios/web/index.html",
     //url:"http://mbqb.ihaiu.com/Gidea-PF-Res/resources/ios/web/index.html",
     appId: "com.shinezone.movie",
-    enableVersion: true
+    enableVersion: false
 };
 
 loadUrl(conch.presetUrl||window.appSetting.url);
